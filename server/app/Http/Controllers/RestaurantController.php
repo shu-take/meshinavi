@@ -22,7 +22,7 @@ class RestaurantController extends Controller
                     $q->Where('name', 'like', '%' . $category . '%');
             });
         }
-        $restaurants = $query->paginate(10);
+        $restaurants = $query->paginate(5);
         $restaurants->appends(compact('name', 'category'));
         // // $restaurants = Restaurant::simplepaginate(10);
         // if(!empty($name)){

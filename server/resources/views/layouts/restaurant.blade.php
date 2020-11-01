@@ -12,6 +12,15 @@
         <div>
             <div>{{ $restaurant->pr_short }}</div>
             <div>{{ $restaurant->opentime }}</div>
+            <ul class="menu_images">
+                @foreach ($restaurant->menus as $menu)
+                    <li class="item"><img src="{{ url($menu->img_path) }}" class="square-img-s"></li>
+                    {{-- @if ($loop->iteration>=3)
+                        @break
+                    @endif --}}
+                    @break($loop->iteration>=7)
+                @endforeach
+            </ul>
         </div>
     </div>
 </div>
